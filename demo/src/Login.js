@@ -13,7 +13,6 @@ function Login(){
         // email.current.value=""
         // password.current.value=""
         console.log("det",det)
-        console.log()
 
     }
     return(
