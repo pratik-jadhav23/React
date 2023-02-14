@@ -9,7 +9,7 @@ function Login(){
     
     let update=()=>{
         let obj={email:email.current.value,password:password.current.value}
-        setData([...det,obj])
+        setData({...obj})
         // email.current.value=""
         // password.current.value=""
         console.log("det",det)
