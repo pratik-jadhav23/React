@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun()">clickme</button>
+    <div id="con"></div>
+    <script>
+        let c=1
+        function fun()
+        {
+        let x=document.createElement("input")
+        x.type="text"
+        x.id="t"+c
+        c++
+        let divref=document.getElementById("con")
+        divref.appendChild(x)
+        }
+    </script>
+</body>
+</html>

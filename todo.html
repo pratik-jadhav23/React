@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    div{
+        background-color: antiquewhite;              
+    }
+</style>
+</head>
+<body>
+    <input type="text" id="tf"/>
+    <button id="btn">save</button>
+    <input type="text" id="hf" hidden/>
+    <div id="dp">
+
+    </div>
+    <script>
+        let btn=document.getElementById("btn")
+        if(btn.innerHTML=='save')
+        {
+            btn.addEventListener('click',save)
+        }
+        function save()
+        {
+            let x=document.getElementById('tf').value
+            if(x=='')
+            {
+                alert('enter data then click on save')
+            }
+            else{
+                let arr=localStorage.getItem('arr')
+                if(arr)
+                {
+                    arr=JSON.parse(arr)
+                    arr.push(x)
+                    localStorage.setItem('arr',JSON.stringify(arr))
+                }
+                else{
+                    arr=[]
+                    arr.push(x)
+                    localStorage.setItem('arr',JSON.stringify(arr))
+                }
+                disp()
+            }
+        }
+        function disp(){
+            let arr=localStorage.getItem('arr')
+            let ref=document.getElementById('dp')
+            ref.innerHTML=''
+            if(arr)
+            {
+                arr=JSON.parse(arr)
+                arr.map((item,i)=>{
+                    let el=document.createElement('li')
+                    el.innerHTML=item+`<i class="fa-solid fa-pen-to-square" 
+                    onclick="upd(${i})"></i><i class="fa-solid fa-trash-can" 
+                    onclick="del(this,${i})"></i>`
+                    ref.appendChild(el)
+                })
+            }
+
+        }
+        disp()
+        function del(el,i)
+        {console.log(el,i)
+            let arr=localStorage.getItem('arr')
+            arr=JSON.parse(arr)
+            arr.splice(i,1)
+            localStorage.setItem('arr',JSON.stringify(arr))
+            disp()
+        }
+        function upd(i)
+        {
+            let r=document.getElementById('tf')
+            let hr=document.getElementById('hf')
+            hf.value=i
+            let arr=localStorage.getItem('arr')
+            arr=JSON.parse(arr)
+            r.value=arr[i]
+            btn.innerHTML='update'
+            btn.removeEventListener('click',save)
+            btn.addEventListener('click',saveupdate)
+        }
+        function saveupdate()
+        {
+            let hr=document.getElementById('hf')
+            let i=parseInt(hr.value)
+            let x=document.getElementById('tf').value
+            let arr=localStorage.getItem('arr')
+            arr=JSON.parse(arr)
+            arr[i]=x
+            localStorage.setItem('arr',JSON.stringify(arr))
+            disp()
+            btn.innerHTML='save'
+            btn.removeEventListener('click',saveupdate)
+            btn.addEventListener('click',save)
+        }
+    </script>
+</body>
+</html>
