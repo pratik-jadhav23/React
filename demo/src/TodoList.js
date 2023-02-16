@@ -13,8 +13,6 @@ function TodoList() {
   {name:'pavan',age:25,id:'102',marks:'99'},
   {name:'siva',age:22,id:'103',marks:'92'},
   {name:'pratik',age:24,id:'104',marks:'95'}]
-
-  let arr2=[...arr,{name:'jumbo',age:24,id:'104',marks:'95'}]
   let arr3=[]
   return (
     <div>

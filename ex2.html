@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<input id="name" type="text" placeholder="name">
+<input id="age" type="text" placeholder="age">
+<button onclick="fun()">submit</button>
+
+<script>
+
+let arr=  JSON.parse(localStorage.getItem("list")) || []
+let name=document.getElementById("name")
+let age=document.getElementById("age")
+
+
+function fun(){
+arr.push({name:name.value,age:age.value})
+console.log(arr)
+localStorage.setItem("list",JSON.stringify(arr))
+
+
+}
+
+
+
+</script>
+    
+</body>
+</html>

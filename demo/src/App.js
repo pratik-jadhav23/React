@@ -9,9 +9,9 @@ function App() {
   console.log("hello")
   return (
     <div>
-     {/* <Date1 />
-     <Login/>
-     <MCQ/> */}
+     {/* <Date1 /> */}
+     {/* <Login/> */}
+     {/* <MCQ/> */}
      <TodoList/>
     </div>
   );

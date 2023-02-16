@@ -16,7 +16,7 @@ function Table(props){
                 </tr>
                 </thead>
                 <tbody>
-                {arr.map((item,i)=><Trow key={i} data={item}/>)}
+                {arr.map((item,i)=><Trow key={i} j={i} data={item}/>)}
                 </tbody>
             </table>
         </div>
