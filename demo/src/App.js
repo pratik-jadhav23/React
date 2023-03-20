@@ -11,8 +11,8 @@ function App() {
   let [todolist,setTodolist]=useState()
   return (
     <div>
-     {/* <Date1 /> */}
-     {/* <Login/> */}
+     <Date1 />
+     <Login/>
      <MCQ/>
      {/* <TodoList/> */}
     </div>
