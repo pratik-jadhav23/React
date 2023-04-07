@@ -10,6 +10,7 @@ let Signup=()=>{
         console.log(data)
         let res= await axios.post("http://localhost:5000/save",data)
         setResp(res.data.msg)
+        
     }
     return(<div>
         <input type="text" onChange={(e)=>upstate(e)} name="email"/>
@@ -17,3 +18,4 @@ let Signup=()=>{
         <button onClick={saveData}>Signup</button>
     </div>)
 }
+export default Signup

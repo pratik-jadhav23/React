@@ -1,5 +1,5 @@
 import { useState,useRef } from "react"
-import Display from "./Display"
+import {Display} from "./Display"
 
 
 function Login(){

@@ -5,16 +5,28 @@ import Login from './Login';
 import MCQ from './MCQ';
 import TodoList from './TodoList';
 import { useState } from 'react';
+import {Api} from './Api';
+import {Nav} from './nav'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MUI } from './MUI';
+
+
 
 function App() {
   console.log("hello")
   let [todolist,setTodolist]=useState()
   return (
     <div>
-     <Date1 />
-     <Login/>
-     <MCQ/>
-     {/* <TodoList/> */}
+     <BrowserRouter>
+     <Nav/>
+     <Routes>
+      <Route path='date' element={<Date1/>}></Route>
+      <Route path='login' element={<Login/>}></Route>
+      <Route path='MCQ' element={<MCQ/>}></Route>
+      <Route path='API' element={<Api/>}></Route>
+      <Route path='MaterialUI' element={<MUI/>}></Route>
+     </Routes>
+     </BrowserRouter>
     </div>
   );
 }
