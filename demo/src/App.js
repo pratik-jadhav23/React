@@ -9,6 +9,7 @@ import {Api} from './Api';
 import {Nav} from './nav'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MUI } from './MUI';
+import { Signup } from './Signup';
 
 
 
@@ -21,6 +22,7 @@ function App() {
      <Nav/>
      <Routes>
       <Route path='date' element={<Date1/>}></Route>
+      <Route path='signup' element={<Signup/>}></Route>
       <Route path='login' element={<Login/>}></Route>
       <Route path='MCQ' element={<MCQ/>}></Route>
       <Route path='API' element={<Api/>}></Route>

@@ -22,7 +22,7 @@ function Login(){
             <input type="email" ref={email} placeholder="Enter ur mail"/>
             <input type="password" ref={password} placeholder="password"/>
             <button onClick={update}>SUBMIT</button>
-            <Display det={det}/>
+            {/* <Display det={det}/> */}
         </form>
     )
 }
