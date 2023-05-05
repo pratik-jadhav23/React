@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
-let Nav=()=>{
-    return(
-       <nav>
-       <Link to='/home'>Home</Link>
-        <Link to='/signup'>Signup</Link>
-        <Link to='/getdet'>Get Details</Link>
-        <Link to='/login'>Login</Link>
-       </nav>
-        
+import {Link} from 'react-router-dom'
+import Button from '@mui/material/Button'
+export const Nav=()=>{
+    return (
+        <nav className='nav'>
+            <Link to='signup'><Button variant="contained">Signup</Button></Link>
+            <Link to='login'><Button variant="contained">Login</Button></Link>
+        </nav>
     )
 }
-export default Nav
